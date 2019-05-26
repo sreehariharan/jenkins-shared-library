@@ -1,0 +1,3 @@
+spring:
+  properties1: val1
+  properties2: val2

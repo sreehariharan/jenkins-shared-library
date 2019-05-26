@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+import groovy.json.JsonSlurper
 
 
 def call(String name) {
@@ -10,5 +11,17 @@ def call(String name) {
     writeFile encoding: 'UTF-8', file: 'hello-script.sh', text: script
 
     sh "chmod 755 hello-script.sh && ./hello-script.sh"
+
+
+    def yaml = libraryResource 'test.yml'
+    def json = libraryResource 'test-definition.json'
+
+    def jsonslurper = new JsonSlurper()
+    jsonslurper.parseText(jsonslurper)
+
+
+
+
+
 
 }
