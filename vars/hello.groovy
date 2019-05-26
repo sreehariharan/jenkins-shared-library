@@ -14,7 +14,7 @@ def call(String name) {
 
 
     def yaml = libraryResource 'test.yml'
-    def json = libraryResource 'test-definition.json'
+    def json = libraryResource 'task-definition.json'
 
     def jsonslurper = new JsonSlurper()
     jsonslurper.parseText(jsonslurper)
