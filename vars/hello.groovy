@@ -21,7 +21,7 @@ def call(String name) {
     Yaml parser = new Yaml()
     Map<String, String> example = parser.load(yaml)
 
-    List newList = new ArrayList()
+    def task_def = libraryResource 'task-definition.json'
 
     def jsonslurper = new JsonSlurper()
     def task_json = jsonslurper.parseText(task_def)
