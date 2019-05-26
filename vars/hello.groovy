@@ -17,7 +17,7 @@ def call(String name) {
     def yaml = libraryResource 'test.yml'
     //def json = libraryResource 'task-definition.json'
 
-    def json = new JsonBuilder(data).toPrettyString()
+    def json = new JsonBuilder(yaml).toPrettyString()
 
     println json
 
