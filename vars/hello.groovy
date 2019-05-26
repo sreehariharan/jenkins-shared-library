@@ -9,6 +9,6 @@ def call(String name) {
 
     writeFile encoding: 'UTF-8', file: 'hello-script.sh', text: script
 
-    sh "cat hello-script.sh"
+    sh "./hello-script.sh"
 
 }
