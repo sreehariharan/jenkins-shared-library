@@ -25,7 +25,7 @@ def call(String name) {
 
     for (m in example)
     {
-        newList << ["key": ${k}, "value": ${v} ]
+        newList << ["key": ${m.key}, "value": ${m.value} ]
     }
 
     println newList
