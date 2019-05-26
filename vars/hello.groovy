@@ -1,7 +1,8 @@
 #!/usr/bin/env groovy
+@Grab('org.yaml:snakeyaml:1.17')
 import groovy.json.JsonSlurper
 import groovy.json.JsonBuilder
-
+import org.yaml.snakeyaml.Yaml
 
 def call(String name) {
 
@@ -15,9 +16,13 @@ def call(String name) {
 
 
     def yaml = libraryResource 'test.yml'
-    //def json = libraryResource 'task-definition.json'
 
-    def json = new JsonBuilder(yaml).toPrettyString()
+
+    Yaml parser = new Yaml()
+    def example = parser.load(yaml)
+
+
+    def json = new JsonBuilder(example).toPrettyString()
 
     println json
 
