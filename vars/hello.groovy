@@ -19,16 +19,25 @@ def call(String name) {
 
 
     Yaml parser = new Yaml()
-    def example = parser.load(yaml)
+    Map<String, String> example = parser.load(yaml)
 
+    List newList = new ArrayList()
 
-    def json = new JsonBuilder(example).toPrettyString()
+    for (m in example)
+    {
+        newList << ["key": ${k}, "value": ${v} ]
+    }
 
-    println json
+    println newList
 
+    /*def json = new JsonBuilder(example).toPrettyString()
 
-    //def jsonslurper = new JsonSlurper()
-    //jsonslurper.parseText(json)
+    def task_def = libraryResource 'task-definition.json'
+
+    def jsonslurper = new JsonSlurper()
+    def task_json = jsonslurper.parseText(task_def)
+*/
+
 
 
 

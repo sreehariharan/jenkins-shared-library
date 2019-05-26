@@ -1,3 +1,2 @@
-spring:
-  properties1: val1
-  properties2: val2
+spring.properties1: val1
+spring.properties2: val2
