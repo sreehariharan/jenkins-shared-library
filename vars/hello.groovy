@@ -7,6 +7,8 @@ def call(String name) {
 
     def script = libraryResource 'hello-world.sh'
 
-    println script
+    writeFile encoding: 'UTF-8', file: 'hello-script.sh', text: script
+
+    sh "cat hello-script.sh"
 
 }
