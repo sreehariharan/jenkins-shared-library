@@ -5,6 +5,8 @@ def call(String name) {
 
     sh "echo hello $name"
 
-    sh "../resources/hello-world.sh"
+    def script = libraryResource 'hello-world.sh'
+
+    println script
 
 }
