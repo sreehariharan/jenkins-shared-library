@@ -14,10 +14,15 @@ def call(String name) {
 
 
     def yaml = libraryResource 'test.yml'
-    def json = libraryResource 'task-definition.json'
+    //def json = libraryResource 'task-definition.json'
 
-    def jsonslurper = new JsonSlurper()
-    jsonslurper.parseText(json)
+    def json = new JsonBuilder(data).toPrettyString()
+
+    println json
+
+
+    //def jsonslurper = new JsonSlurper()
+    //jsonslurper.parseText(json)
 
 
 
