@@ -17,7 +17,7 @@ def call(String name) {
     def json = libraryResource 'task-definition.json'
 
     def jsonslurper = new JsonSlurper()
-    jsonslurper.parseText(jsonslurper)
+    jsonslurper.parseText(json)
 
 
 
