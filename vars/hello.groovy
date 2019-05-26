@@ -23,22 +23,15 @@ def call(String name) {
 
     List newList = new ArrayList()
 
-    for (m in example)
-    {
-        newList << ["key": m.key, "value": m.value ]
-    }
-
-    println newList
-
-    /*def json = new JsonBuilder(example).toPrettyString()
-
-    def task_def = libraryResource 'task-definition.json'
-
     def jsonslurper = new JsonSlurper()
     def task_json = jsonslurper.parseText(task_def)
-*/
 
+    for (m in example)
+    {
+        task_json.path1.path2.arrEle << ["key": m.key, "value": m.value ]
+    }
 
+    println task_json
 
 
 
